@@ -122,7 +122,6 @@ function SearchPage() {
           <button
             className="btn btn-primary search-button"
             onClick={handleSearch}
-            disabled={searchQuery.trim() === ""}
           >
             Search
           </button>
