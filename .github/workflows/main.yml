@@ -5,6 +5,7 @@ on:
     branches: [master, main]
   pull_request:
     branches: [master, main]
+  workflow_dispatch:  # This allows manual triggering of the workflow
 
 jobs:
   lint_js:
