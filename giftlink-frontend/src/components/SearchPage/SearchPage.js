@@ -116,13 +116,6 @@ function SearchPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <button
-              className="btn btn-primary"
-              onClick={handleSearch}
-              disabled={searchQuery.trim() === ""}
-            >
-              Search
-            </button>
           </div>
 
           {/* Task 8: Implement search button with onClick event to trigger search:*/}

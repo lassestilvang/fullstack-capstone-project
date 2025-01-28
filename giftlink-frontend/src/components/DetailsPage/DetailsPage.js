@@ -72,6 +72,15 @@ function DetailsPage() {
     },
   ];
 
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp * 1000);
+    return date.toLocaleDateString("default", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!gift) return <div>Gift not found</div>;
@@ -101,23 +110,23 @@ function DetailsPage() {
           {/* Task 6: Display gift details */}
           <p>
             <strong>Category:</strong>
-            {gift.category}
+            &nbsp;{gift.category}
           </p>
           <p>
             <strong>Condition:</strong>
-            {gift.condition}
+            &nbsp;{gift.condition}
           </p>
           <p>
             <strong>Date Added:</strong>
-            {gift.date_added}
+            &nbsp;{formatDate(gift.date_added)}
           </p>
           <p>
             <strong>Age (Years):</strong>
-            {gift.age_years}
+            &nbsp;{gift.age_years}
           </p>
           <p>
             <strong>Description:</strong>
-            {gift.description}
+            &nbsp;{gift.description}
           </p>
         </div>
       </div>
