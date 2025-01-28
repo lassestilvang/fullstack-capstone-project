@@ -54,7 +54,14 @@ const Profile = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch(`/api/auth/update`, {
+      const authtoken = sessionStorage.getItem("auth-token");
+      const email = sessionStorage.getItem("email");
+      if (!authtoken || !email) {
+        navigate("/app/login");
+        return;
+      }
+      const payload = { ...updatedDetails };
+      const response = await fetch(`${urlConfig.backendUrl}/api/auth/update`, {
         // Task 1: set method
         method: "PUT",
         // Task 2: set headers

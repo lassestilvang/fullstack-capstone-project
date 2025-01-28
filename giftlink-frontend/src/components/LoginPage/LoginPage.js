@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./LoginPage.css";
 
 // Task 1: Import urlConfig from `giftlink-frontend/src/config.js`
@@ -50,7 +50,7 @@ function LoginPage() {
       });
 
       // Task 1: Access data coming from fetch API
-      const json = await res.json();
+      const json = await response.json();
 
       if (json.authtoken) {
         // Task 2: Set user details

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { urlConfig } from "../../config";
 import "./DetailsPage.css";
 
 function DetailsPage() {
@@ -108,7 +109,7 @@ function DetailsPage() {
           </p>
           <p>
             <strong>Date Added:</strong>
-            {formatDate(gift.date_added)}
+            {gift.date_added}
           </p>
           <p>
             <strong>Age (Years):</strong>

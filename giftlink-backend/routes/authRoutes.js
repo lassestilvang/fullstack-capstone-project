@@ -3,14 +3,12 @@ const express = require("express");
 const app = express();
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+// Task 1: Use the `body`,`validationResult` from `express-validator` for input validation
 const { body, validationResult } = require("express-validator");
 const connectToDatabase = require("../models/db");
 const router = express.Router();
 const dotenv = require("dotenv");
 const pino = require("pino"); // Import Pino logger
-
-// Task 1: Use the `body`,`validationResult` from `express-validator` for input validation
-const { body, validationResult } = require("express-validator");
 
 //Step 1 - Task 3: Create a Pino logger instance
 const logger = pino();
